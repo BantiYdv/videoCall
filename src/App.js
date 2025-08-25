@@ -16,7 +16,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+        <div style={{ textAlign: "center", marginBottom: "30px" }}>
+          <h1 style={{ color: "#333", marginBottom: "10px" }}>Agora Video Call</h1>
+          <p style={{ color: "#666", fontSize: "14px" }}>
+            Using token authentication - Channel: <strong>my-room</strong>
+          </p>
+        </div>
         <ChannelForm selectChannel={this.selectChannel} />
         <Call channel={this.state.channel} />
       </div>
