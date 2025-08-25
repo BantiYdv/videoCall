@@ -9,10 +9,11 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node --max-old-space-size=4096 node_modules/.bin/react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false node --max-old-space-size=4096 node_modules/.bin/react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

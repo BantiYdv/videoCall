@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: agora-video-call
+    env: static
+    buildCommand: npm install && NODE_OPTIONS="--max-old-space-size=4096" npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_AGORA_APP_ID
+        value: a32fa0ab368c43aa85985bb65628111f
+      - key: REACT_APP_AGORA_TOKEN
+        value: null
+      - key: REACT_APP_DEFAULT_CHANNEL
+        value: my-room
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=4096
