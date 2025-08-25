@@ -4,16 +4,20 @@
   "private": true,
   "dependencies": {
     "agora-rtc-sdk-ng": "^4.20.0",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "node --max-old-space-size=4096 node_modules/.bin/react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false node --max-old-space-size=4096 node_modules/.bin/react-scripts build",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && npx react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "server": "node server.js",
+    "dev": "npm run build && npm run server",
+    "prod": "npm run build && node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

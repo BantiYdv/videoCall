@@ -1,9 +1,9 @@
 services:
   - type: web
     name: agora-video-call
-    env: static
+    env: node
     buildCommand: npm install && NODE_OPTIONS="--max-old-space-size=4096" npm run build
-    staticPublishPath: ./build
+    startCommand: node server.js
     envVars:
       - key: REACT_APP_AGORA_APP_ID
         value: a32fa0ab368c43aa85985bb65628111f
@@ -13,3 +13,5 @@ services:
         value: my-room
       - key: NODE_OPTIONS
         value: --max-old-space-size=4096
+      - key: PORT
+        value: 10000

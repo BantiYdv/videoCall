@@ -11,14 +11,15 @@
 2. **Connect to Render:**
    - Go to [render.com](https://render.com)
    - Sign up/Login
-   - Click "New +" → "Static Site"
+   - Click "New +" → "Web Service"
 
 3. **Configure the deployment:**
    - **Name:** `agora-video-call`
    - **Repository:** Your GitHub repo
    - **Branch:** `main`
-   - **Build Command:** `npm install && npm run build`
-   - **Publish Directory:** `build`
+   - **Runtime:** Node
+   - **Build Command:** `npm install && NODE_OPTIONS="--max-old-space-size=4096" npm run build`
+   - **Start Command:** `node server.js`
 
 4. **Set Environment Variables:**
    ```
